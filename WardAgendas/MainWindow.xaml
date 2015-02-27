@@ -1,0 +1,193 @@
+﻿<controls:MetroWindow x:Class="WardAgendas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Agendas" Height="475" Width="700" Closing="Window_Closing">
+	
+	<Window.DataContext>
+		<Binding Path="MainWindowViewModel" Source="{StaticResource VMLocator}"/>
+	</Window.DataContext>
+
+	<controls:MetroWindow.GlowBrush>
+		<SolidColorBrush Color="{DynamicResource AccentColor}" />
+	</controls:MetroWindow.GlowBrush>
+
+	<Grid>
+		<TabControl SelectedIndex="{Binding CurrentTabIndex}" Name="tabControl">
+			<TabItem Header="Bishopric">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+						<TextBlock Text="Opening Prayer: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Margin="5" />
+						<TextBlock Text="{Binding OpeningPrayer}" Grid.Column="1" Grid.Row="0" Margin="5" />
+						<TextBlock Text="Thought: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" Margin="5" />
+						<TextBlock Text="{Binding Thought}" Grid.Column="1" Grid.Row="1" Margin="5" />
+						<TextBlock Text="Closing Prayer: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="2" Margin="5" />
+						<TextBlock Text="{Binding ClosingPrayer}" Grid.Column="1" Grid.Row="2" Margin="5" />
+						<TextBlock Text="Offset: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="3" Margin="5" />
+						<TextBlock Name="BishopricOffset" Text="{Binding Offset}" Grid.Column="1" Grid.Row="3" Margin="5" />
+					</Grid>
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="1">
+						<TextBlock Text="Updated: " VerticalAlignment="Center" />
+						<TextBlock Text="{Binding UpdatedDate}" Name="UpdateTxt" VerticalAlignment="Center" />
+						<Button Content="Clear Offset" Margin="10" Command="{Binding ClearOffsetCommand}" />
+						<Button Content="Decrease Offset" Margin="10" Command="{Binding DecreaseOffsetCommand}" />
+						<Button Content="Increase Offset" Margin="10" Command="{Binding IncreaseOffsetCommand}" IsDefault="True" />
+						<Button Content="Send Email" Margin="10" Command="{Binding SendMessageCommand}" />
+					</StackPanel>
+				</Grid>
+			</TabItem>
+			<TabItem Header="PEC">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+						<TextBlock Text="Opening Prayer: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Margin="5" />
+						<TextBlock Text="{Binding OpeningPrayer}" Grid.Column="1" Grid.Row="0" Margin="5" />
+						<TextBlock Text="Thought: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" Margin="5" />
+						<TextBlock Text="{Binding Thought}" Grid.Column="1" Grid.Row="1" Margin="5" />
+						<TextBlock Text="Closing Prayer: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="2" Margin="5" />
+						<TextBlock Text="{Binding ClosingPrayer}" Grid.Column="1" Grid.Row="2" Margin="5" />
+						<TextBlock Text="Offset: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="3" Margin="5" />
+						<TextBlock Name="PecOffset" Text="{Binding Offset}" Grid.Column="1" Grid.Row="3" Margin="5" />
+					</Grid>
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="1">
+						<Button Content="Clear Offset" Margin="10" Command="{Binding ClearOffsetCommand}" />
+						<Button Content="Decrease Offset" Margin="10" Command="{Binding DecreaseOffsetCommand}" />
+						<Button Content="Increase Offset" Margin="10" Command="{Binding IncreaseOffsetCommand}" IsDefault="True" />
+						<Button Content="Send Email" Margin="10" Command="{Binding SendMessageCommand}" />
+					</StackPanel>
+				</Grid>
+			</TabItem>
+			<TabItem Header="Ward Council">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+						<TextBlock Text="Opening Prayer: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Margin="5" />
+						<TextBlock Text="{Binding OpeningPrayer}" Grid.Column="1" Grid.Row="0" Margin="5" />
+						<TextBlock Text="Thought: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" Margin="5" />
+						<TextBlock Text="{Binding Thought}" Grid.Column="1" Grid.Row="1" Margin="5" />
+						<TextBlock Text="Closing Prayer: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="2" Margin="5" />
+						<TextBlock Text="{Binding ClosingPrayer}" Grid.Column="1" Grid.Row="2" Margin="5" />
+						<TextBlock Text="Offset: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="3" Margin="5" />
+						<TextBlock Name="WardCouncelOffset" Text="{Binding Offset}" Grid.Column="1" Grid.Row="3" Margin="5" />
+					</Grid>
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="1">
+						<Button Content="Clear Offset" Margin="10" Command="{Binding ClearOffsetCommand}" />
+						<Button Content="Decrease Offset" Margin="10" Command="{Binding DecreaseOffsetCommand}" />
+						<Button Content="Increase Offset" Margin="10" Command="{Binding IncreaseOffsetCommand}" IsDefault="True" />
+						<Button Content="Send Email" Margin="10" Command="{Binding SendMessageCommand}" />
+					</StackPanel>
+				</Grid>
+			</TabItem>
+			<TabItem Header="Settings">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+						<Label Content="Bishop" Grid.Row="0"/>
+						<TextBox Text="{Binding Bishop.Name, Mode=TwoWay}" Grid.Column="1" Grid.Row="0" />
+						<TextBox Text="{Binding Bishop.Email, Mode=TwoWay}" Grid.Column="2" Grid.Row="0" />
+						<Label Content="First Counselor" Grid.Row="1"/>
+						<TextBox Text="{Binding FirstCounselor.Name, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" />
+						<TextBox Text="{Binding FirstCounselor.Email, Mode=TwoWay}" Grid.Column="2" Grid.Row="1" />
+						<Label Content="Second Counselor" Grid.Row="2"/>
+						<TextBox Text="{Binding SecondCounselor.Name, Mode=TwoWay}" Grid.Column="1" Grid.Row="2" />
+						<TextBox Text="{Binding SecondCounselor.Email, Mode=TwoWay}" Grid.Column="2" Grid.Row="2" />
+						<Label Content="Executive Secretary" Grid.Row="3"/>
+						<TextBox Text="{Binding ExecutiveSecretary.Name, Mode=TwoWay}" Grid.Column="1" Grid.Row="3" />
+						<TextBox Text="{Binding ExecutiveSecretary.Email, Mode=TwoWay}" Grid.Column="2" Grid.Row="3" />
+						<Label Content="Assistant Executive Secretary" Grid.Row="4"/>
+						<TextBox Text="{Binding AssistantExecutiveSecretary.Name, Mode=TwoWay}" Grid.Column="1" Grid.Row="4" />
+						<TextBox Text="{Binding AssistantExecutiveSecretary.Email, Mode=TwoWay}" Grid.Column="2" Grid.Row="4" />
+						<Label Content="Assistant Executive Secretary" Grid.Row="5"/>
+						<TextBox Text="{Binding AssistantExecutiveSecretary2.Name, Mode=TwoWay}" Grid.Column="1" Grid.Row="5" />
+						<TextBox Text="{Binding AssistantExecutiveSecretary2.Email, Mode=TwoWay}" Grid.Column="2" Grid.Row="5" />
+						<Label Content="Ward Clerk" Grid.Row="6"/>
+						<TextBox Text="{Binding WardClerk.Name, Mode=TwoWay}" Grid.Column="1" Grid.Row="6" />
+						<TextBox Text="{Binding WardClerk.Email, Mode=TwoWay}" Grid.Column="2" Grid.Row="6" />
+						<Label Content="South Elders Quorum" Grid.Row="7"/>
+						<TextBox Text="{Binding SEldersQuorum.Name, Mode=TwoWay}" Grid.Column="1" Grid.Row="7" />
+						<TextBox Text="{Binding SEldersQuorum.Email, Mode=TwoWay}" Grid.Column="2" Grid.Row="7" />
+						<Label Content="North Elders Quorum" Grid.Row="8"/>
+						<TextBox Text="{Binding NEldersQuorum.Name, Mode=TwoWay}" Grid.Column="1" Grid.Row="8" />
+						<TextBox Text="{Binding NEldersQuorum.Email, Mode=TwoWay}" Grid.Column="2" Grid.Row="8" />
+						<Label Content="Ward Mission Leader" Grid.Row="9"/>
+						<TextBox Text="{Binding WardMissionLeader.Name, Mode=TwoWay}" Grid.Column="1" Grid.Row="9" />
+						<TextBox Text="{Binding WardMissionLeader.Email, Mode=TwoWay}" Grid.Column="2" Grid.Row="9" />
+						<Label Content="Sunday School President" Grid.Row="10"/>
+						<TextBox Text="{Binding SundaySchoolPresident.Name, Mode=TwoWay}" Grid.Column="1" Grid.Row="10" />
+						<TextBox Text="{Binding SundaySchoolPresident.Email, Mode=TwoWay}" Grid.Column="2" Grid.Row="10" />
+						<Label Content="Relief Society President" Grid.Row="11"/>
+						<TextBox Text="{Binding ReliefSocietyPresident.Name, Mode=TwoWay}" Grid.Column="1" Grid.Row="11" />
+						<TextBox Text="{Binding ReliefSocietyPresident.Email, Mode=TwoWay}" Grid.Column="2" Grid.Row="11" />
+						<Label Content="Primary President" Grid.Row="12"/>
+						<TextBox Text="{Binding PrimaryPresident.Name, Mode=TwoWay}" Grid.Column="1" Grid.Row="12" />
+						<TextBox Text="{Binding PrimaryPresident.Email, Mode=TwoWay}" Grid.Column="2" Grid.Row="12" />
+					</Grid>
+					<Button Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Content="Save" Command="{Binding SaveSettingsCommand}" />
+				</Grid>
+			</TabItem>
+		</TabControl>
+	</Grid>
+</controls:MetroWindow>

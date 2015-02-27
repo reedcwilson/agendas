@@ -1,0 +1,13 @@
+Bishop|Bishop Hansen|
+FirstCounselor|Brother Davis|
+SecondCounselor|Brother Johnson|
+ExecutiveSecretary|Brother Wilson|
+AssistantExecutiveSecretary|Brother Dong|
+AssistantExecutiveSecretary2|Brother Goodsell|
+WardClerk|Brother Nugent|
+SEldersQuorum|Brother Heap|
+NEldersQuorum|Brother Draper|
+WardMissionLeader|Brother Murphy|
+SundaySchoolPresident|Brother Reese|
+ReliefSocietyPresident|Sister Pew|
+PrimaryPresident|Sister Heap|
